@@ -1,15 +1,10 @@
 import mongoose from 'mongoose';
 
+// MeasurementResult.js
 const MeasurementResultSchema = new mongoose.Schema(
   {
-    avgPing: Number,
-    jitter: Number,
-    upstreamSpeed: Number,
-    downstreamSpeed: Number,
-    floorNumber: Number,
-    roomNumber: Number,
-    locationClass: Number,
-    userCookie: String,
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    speedTest: { type: mongoose.Schema.Types.ObjectId, ref: 'SpeedTest' },
   },
   { timestamps: true }
 );
