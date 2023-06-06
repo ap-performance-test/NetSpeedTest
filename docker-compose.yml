@@ -17,7 +17,8 @@ services:
     command: mongod --auth
 
   express:
-    image: pulchra13/netspeedtest:0.1
+    image: pulchra13/netspeedtest:0.2
+    pull_policy: always
     depends_on:
       - mongodb
     ports:
